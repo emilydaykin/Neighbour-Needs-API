@@ -1,1 +1,1 @@
-# ga-project3
+# ga-project3-api
