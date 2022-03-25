@@ -15,8 +15,8 @@ app.use(
 app.use('/api', router);
 
 async function runServer() {
-  await connectToDb;
-  app.listen(port, () => console.log(`App is listening on port ${port}`));
+  await connectToDb();
+  app.listen(port, () => console.log(`Backend API is listening on port ${port}`));
 }
 
 runServer();
