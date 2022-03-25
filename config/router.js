@@ -1,7 +1,7 @@
 import express from 'express';
 import profileController from '../controllers/profileController.js';
 // import postController from '../controllers/postController.js';
-// import commentsController from '../controllers/commentsController.js';
+import commentsController from '../controllers/commentsController.js';
 import userController from '../controllers/userController.js';
 
 const router = express.Router();
@@ -25,15 +25,12 @@ router
 
 // *FOR EACH PROFILE AND CARD
 
-// router
-//   .route('/profile/:id/comments')
-//   .get(commentsController.getAllComments)
-//   .post(commentsController.createComment);
+router.route('/profile/:id/comments').post(commentsController.createComment);
 
-// router
-//   .route('/profile/:id/comments/:id')
-//   .put(commentsController.editComment)
-//   .delete(commentsController.deleteComment);
+router
+  .route('/profile/:id/comments/:commentId')
+  // .put(commentsController.editComment)
+  .delete(commentsController.deleteComment);
 
 router.route('/register').post(userController.registerProfile);
 

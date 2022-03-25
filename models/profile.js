@@ -13,8 +13,8 @@ const commentSchema = new mongoose.Schema(
     createdBy: {
       type: mongoose.Schema.ObjectId,
       ref: 'Profile',
-      required: true
-    }
+      // required: true,
+    },
   },
   { timestamps: true }
 );
@@ -26,11 +26,11 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Email required'],
     unique: true,
-    validate: (email) => emailRegex.test(email)
+    validate: (email) => emailRegex.test(email),
   },
   password: {
     type: String,
-    required: [true, 'Password required']
+    required: [true, 'Password required'],
     // validate: (password) => passwordRegex.test(password)
   },
   isHelper: { type: Boolean },
@@ -42,7 +42,7 @@ const profileSchema = new mongoose.Schema({
   imageService: { type: String },
   comments: [commentSchema],
   posts: { type: Array },
-  isAdmin: { type: Boolean }
+  isAdmin: { type: Boolean },
 });
 
 profileSchema.pre('save', function encryptPassword(next) {
@@ -56,7 +56,9 @@ profileSchema.pre('save', function encryptPassword(next) {
 //   return bcrypt.compareSync(password, this.password);
 // };
 
-profileSchema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true } }));
+profileSchema.plugin(
+  mongooseHidden({ defaultHidden: { password: true, email: true } })
+);
 
 // profileSchema.plugin(uniqueValidator);
 
