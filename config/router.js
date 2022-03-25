@@ -22,13 +22,10 @@ router
 router
   .route('/posts')
   .get(postsController.getAllPosts)
-  .post(postsController.createPost);
+  .post(secureRoute, postsController.createPost);
 
 // //*POSTS ID
-router
-  .route('/posts/:id')
-  .put(postsController.editPost)
-  .delete(postsController.deletePost);
+router.route('/posts/:id').put(postsController.editPost).delete(postsController.deletePost);
 
 // *FOR EACH PROFILE AND CARD
 

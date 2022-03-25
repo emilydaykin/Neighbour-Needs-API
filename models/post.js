@@ -4,12 +4,12 @@ const postSchema = new mongoose.Schema(
   {
     text: { type: String, required: true },
     service: { type: String, required: true },
-    urgency: { type: String, required: true },
+    urgency: { type: String, required: false },
     createdBy: {
       type: mongoose.Schema.ObjectId,
       ref: 'Profile',
-      required: true,
-    },
+      required: true
+    }
   },
   { timestamps: true }
 );
