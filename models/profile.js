@@ -16,7 +16,7 @@ const profileSchema = new mongoose.Schema({
   password: { type: String, required: [true, 'Password required'] },
   isHelper: { type: Boolean },
   averageRating: { type: String },
-  service: { type: String },
+  services: { type: Array },
   city: { type: String, required: [true, 'City required'] },
   region: { type: String, required: [true, 'Region required'] },
   imageProfile: { type: String },

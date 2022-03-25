@@ -3,7 +3,7 @@ const createProfile = (
   surname,
   email,
   password,
-  service,
+  services,
   averageRating,
   city,
   region,
@@ -19,7 +19,7 @@ const createProfile = (
     surname: surname,
     email: email,
     password: password,
-    service: service,
+    services: services,
     averageRating: averageRating,
     city: city,
     region: region,
@@ -38,13 +38,13 @@ const profiles = [
     'Admin',
     'admin@user.com',
     'Password1!@',
-    '',
+    [],
     8.5,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     true // isAdmin
@@ -55,13 +55,13 @@ const profiles = [
     'Sanders',
     'es@user.com',
     'Password1!@',
-    'wedding planning',
+    ['wedding planning'],
     4.1,
     'London',
     'North',
     '../bitmoji.jpeg',
     'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -71,13 +71,13 @@ const profiles = [
     'Sosa',
     'gs@user.com',
     'Password1!@',
-    'baby sitting',
+    ['baby sitting'],
     7,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -88,13 +88,13 @@ const profiles = [
     'Fields',
     'wf@user.com',
     'Password1!@',
-    'plumbing',
+    ['plumbing'],
     9,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -104,13 +104,13 @@ const profiles = [
     'Parrish',
     'jp@user.com',
     'Password1!@',
-    'web development',
+    ['web development'],
     10,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -120,13 +120,13 @@ const profiles = [
     'Wilder',
     'mw@user.com',
     'Password1!@',
-    'therapy',
+    ['therapy'],
     6.8,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -136,13 +136,13 @@ const profiles = [
     'Marsh',
     'lm@user.com',
     'Password1!@',
-    'party planning',
+    ['party planning'],
     7.7,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -152,13 +152,13 @@ const profiles = [
     'Farley',
     'tf@user.com',
     'Password1!@',
-    'carpentering',
+    ['carpentering'],
     9.3,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -168,13 +168,13 @@ const profiles = [
     'Rocha',
     'br@user.com',
     'Password1!@',
-    'dog walking',
+    ['dog walking'],
     9.5,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -184,13 +184,13 @@ const profiles = [
     'Young',
     'dy@user.com',
     'Password1!@',
-    'massaging',
+    ['massaging'],
     8.9,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -200,13 +200,13 @@ const profiles = [
     'Bennett',
     'bb@user.com',
     'Password1!@',
-    'decorator',
+    ['decorator'],
     9,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -216,13 +216,13 @@ const profiles = [
     'Colon',
     'fc@user.com',
     'Password1!@',
-    'nannying',
+    ['nannying'],
     8.7,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -232,13 +232,13 @@ const profiles = [
     'Carney',
     'tc@user.com',
     'Password1!@',
-    'architecture',
+    ['architecture'],
     9.5,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -248,13 +248,13 @@ const profiles = [
     'Peterson',
     'pp@user.com',
     'Password1!@',
-    'interior design',
+    ['interior design'],
     8.2,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -264,13 +264,13 @@ const profiles = [
     'Dotson',
     'vd@user.com',
     'Password1!@',
-    'cat sitting',
+    ['cat sitting'],
     7.3,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -280,13 +280,13 @@ const profiles = [
     'Montoya',
     'sm@user.com',
     'Password1!@',
-    'cleaning',
+    ['cleaning'],
     10,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -296,13 +296,13 @@ const profiles = [
     'Adams',
     'am@user.com',
     'Password1!@',
-    'painting',
+    ['painting'],
     9.2,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -312,13 +312,13 @@ const profiles = [
     'Long',
     'gl@user.com',
     'Password1!@',
-    'maths tutoring',
+    ['maths tutoring'],
     7.6,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -328,13 +328,13 @@ const profiles = [
     'Terrell',
     'it@user.com',
     'Password1!@',
-    'electician',
+    ['electician'],
     8.8,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
@@ -344,13 +344,13 @@ const profiles = [
     'Blanchard',
     'db@user.com',
     'Password1!@',
-    'electonics repair', //17
+    ['electonics repair'],
     7.9,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // helper
+    true, // is a helper or not
     [],
     [],
     false
