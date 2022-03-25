@@ -13,8 +13,10 @@ const getAllProfiles = async (req, res, next) => {
 // GET (by id, name, services, city, or region)
 const searchProfile = async (req, res, next) => {
   try {
+    console.log('req.params', req.params);
     const allProfiles = await Profile.find();
-    const profileById = allProfiles.find((profile) => (profile.id = req.params.searchTerm));
+    console.log('allProfiles', allProfiles);
+    const profileById = allProfiles.find((profile) => profile.id === req.params.searchTerm);
 
     if (profileById) {
       return res.status(200).json({ status: 'success', body: profileById });
@@ -43,10 +45,17 @@ const searchProfile = async (req, res, next) => {
 // PUT (no POST since that's register)
 const updateProfile = async (req, res, next) => {
   try {
+    // console.log('req.params', req.params);
+    // console.log('req.body', req.body);
     const updatedProfile = await Profile.findById(req.params.id);
-    updatedProfile.set(req.body);
-    const savedProfile = await updateProfile.save();
-    return res.status(200).json({ status: 'Successfully updated profile', body: savedProfile });
+    console.log({ updatedProfile });
+    if (!updatedProfile) {
+      return res.status(400).json({ message: 'Profile not found' });
+    } else {
+      updatedProfile.set(req.body);
+      const savedProfile = await updatedProfile.save();
+      return res.status(200).json({ status: 'Successfully updated profile', body: savedProfile });
+    }
   } catch (err) {
     next(err);
   }
@@ -55,10 +64,17 @@ const updateProfile = async (req, res, next) => {
 // DEL (everyone can delete their own? or just admin? probably just admin)
 const deleteProfile = async (req, res, next) => {
   try {
-    const deletedProfile = await Profile.findById(req.params.id);
-    await Profile.findByIdAndRemove(req.params.id);
-    return res.status(200).json({ message: 'Successfully deleted profile', body: deletedProfile });
+    console.log('req.params', req.params);
+    const profile = await Profile.findById(req.params.id);
+    console.log('profile', profile);
+    if (!profile) {
+      return res.status(400).json({ message: 'Profile not found' });
+    } else {
+      await Profile.findByIdAndRemove(req.params.id);
+      return res.status(200).json({ message: 'Successfully deleted profile', body: profile });
+    }
   } catch (err) {
+    console.error(err);
     next(err);
   }
 };
