@@ -8,9 +8,7 @@ async function registerProfile(req, res, next) {
     }
 
     const profile = await Profile.create(req.body);
-    return res
-      .status(201)
-      .json({ message: 'Profile created !!!', body: profile });
+    return res.status(201).json({ message: 'Profile created !!!', body: profile });
   } catch (err) {
     next(err);
   }
@@ -21,24 +19,20 @@ async function loginProfile(req, res, next) {
     const profile = await Profile.findOne({ email: req.body.email });
 
     if (!profile) {
-      return res
-        .status(404)
-        .json({ message: 'Unauthorized, profile does not exist' });
+      return res.status(404).json({ message: 'Unauthorized, profile does not exist' });
     }
 
     const isValidPw = profile.validatePassword(req.body.password);
 
     if (!isValidPw) {
-      return res
-        .status(404)
-        .json({ message: 'Unauthorized, passwords do not match' });
+      return res.status(404).json({ message: 'Unauthorized, passwords do not match' });
     }
 
     const token = jwt.sign(
       {
         profileId: profile._id,
         isAdmin: profile.isAdmin,
-        isHelper: profile.isHelper,
+        isHelper: profile.isHelper
       },
       secret,
       { expiresIn: '6h' }
@@ -52,5 +46,5 @@ async function loginProfile(req, res, next) {
 
 export default {
   registerProfile,
-  loginProfile,
+  loginProfile
 };
