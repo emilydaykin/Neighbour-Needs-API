@@ -6,6 +6,8 @@ export function connectToDb() {
   return mongoose.connect(dbURL);
 }
 
-export function disconnectDb() {
-  return mongoose.dropDatabase(dbURL);
+export function disconnectFromDb() {
+  if (mongoose.connection.readyState !== 0) {
+    return mongoose.disconnect();
+  }
 }
