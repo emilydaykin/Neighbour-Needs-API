@@ -6,18 +6,15 @@ import uniqueValidator from 'mongoose-unique-validator';
 
 import { emailRegex, passwordRegex } from '../lib/stringTesters.js';
 
-
 const commentSchema = new mongoose.Schema(
   {
     text: { type: String, required: true, maxLength: 300 },
     rating: { type: Number, required: true, min: 1, max: 5 },
-
     createdBy: {
       type: mongoose.Schema.ObjectId,
       ref: 'Profile',
       required: true,
     },
-
   },
   { timestamps: true }
 );
@@ -29,12 +26,12 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Email required'],
     unique: true,
-    validate: (email) => emailRegex.test(email),
+    validate: (email) => emailRegex.test(email)
   },
   password: {
     type: String,
     required: [true, 'Password required'],
-    validate: (password) => passwordRegex.test(password),
+    validate: (password) => passwordRegex.test(password)
   },
   isHelper: { type: Boolean },
   averageRating: { type: String },
