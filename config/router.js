@@ -3,6 +3,7 @@ import profileController from '../controllers/profileController.js';
 // import postController from '../controllers/postController.js';
 // import commentsController from '../controllers/commentsController.js';
 import userController from '../controllers/userController.js';
+import secureRoute from '../middleware/secureRoute.js';
 
 const router = express.Router();
 
