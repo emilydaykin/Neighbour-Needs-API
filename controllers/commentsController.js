@@ -8,7 +8,7 @@ const createComment = async (req, res, next) => {
     }
     const newComment = {
       ...req.body,
-      createdBy: req.currentUser,
+      createdBy: req.currentProfile,
     };
     profile.comments.push(newComment);
 
