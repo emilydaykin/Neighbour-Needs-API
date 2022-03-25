@@ -4,7 +4,7 @@ import Profile from '../models/profile.js';
 const getAllProfiles = async (req, res, next) => {
   try {
     const allProfiles = await Profile.find();
-    return res.status(200).json({ status: success, body: allProfiles });
+    return res.status(200).json({ status: 'success', body: allProfiles });
   } catch (err) {
     next(err);
   }
@@ -17,7 +17,7 @@ const searchProfile = async (req, res, next) => {
     const profileById = allProfiles.find((profile) => (profile.id = req.params.searchTerm));
 
     if (profileById) {
-      return res.status(200).json({ status: success, body: profileById });
+      return res.status(200).json({ status: 'success', body: profileById });
     } else {
       const searchTermLowerCase = req.params.searchTerm.toLowerCase();
       const profileByNameOrServiceOrArea = allProfiles.filter(
@@ -30,7 +30,7 @@ const searchProfile = async (req, res, next) => {
       );
 
       if (profileByNameOrServiceOrArea.length !== 0) {
-        res.status(200).json({ status: success, body: profileByNameOrServiceOrArea });
+        res.status(200).json({ status: 'success', body: profileByNameOrServiceOrArea });
       } else {
         res.status(400).json({ message: 'Profile not found' });
       }
