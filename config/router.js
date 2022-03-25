@@ -1,7 +1,9 @@
 import express from 'express';
 import profileController from '../controllers/profileController.js';
-// import postController from '../controllers/postController.js';
-import commentsController from '../controllers/commentsController.js';
+
+import postsController from '../controllers/postsController.js';
+// import commentsController from '../controllers/commentsController.js';
+
 import userController from '../controllers/userController.js';
 
 const router = express.Router();
@@ -18,10 +20,16 @@ router
   .delete(profileController.deleteProfile);
 
 //* FOR POSTS
-// router.route('/posts').get(postsController.getAllPosts).post(postsController.createPost);
+router
+  .route('/posts')
+  .get(postsController.getAllPosts)
+  .post(postsController.createPost);
 
 // //*POSTS ID
-// router.route('/posts/:id').put(postController.editPost).delete(postComment.deletePost);
+router
+  .route('/posts/:id')
+  .put(postsController.editPost)
+  .delete(postsController.deletePost);
 
 // *FOR EACH PROFILE AND CARD
 
