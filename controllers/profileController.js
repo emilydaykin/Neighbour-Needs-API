@@ -13,8 +13,10 @@ const getAllProfiles = async (req, res, next) => {
 // GET (by id, name, services, city, or region)
 const searchProfile = async (req, res, next) => {
   try {
+    console.log('req.params', req.params);
     const allProfiles = await Profile.find();
-    const profileById = allProfiles.find((profile) => (profile.id = req.params.searchTerm));
+    console.log('allProfiles', allProfiles);
+    const profileById = allProfiles.find((profile) => profile.id === req.params.searchTerm);
 
     if (profileById) {
       return res.status(200).json({ status: 'success', body: profileById });
