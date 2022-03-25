@@ -6,13 +6,14 @@ import userController from '../controllers/userController.js';
 
 const router = express.Router();
 
-// * FOR ALL USERS AND CREATE PRO
+// * FOR ALL USERS
 router.route('/profiles').get(profileController.getAllProfiles);
 
-// * location, service, blah blah???
+// * Search by firstName, surname, services, city and region
+router.route('/profiles/:searchTerm').get(profileController.searchProfile);
+
 router
-  .route('/profiles/:searchTerm')
-  .get(profileController.searchProfile)
+  .route('/profiles/:id')
   .put(profileController.updateProfile)
   .delete(profileController.deleteProfile);
 
