@@ -3,6 +3,7 @@ import { port } from './config/environment.js';
 import router from './config/router.js';
 import mongoSanitize from 'express-mongo-sanitize';
 import { connectToDb } from './db/helpers.js';
+import errorHandler from './middleware/errorHandler.js';
 
 const app = express();
 app.use(express.json());
@@ -13,6 +14,8 @@ app.use(
   })
 );
 app.use('/api', router);
+
+app.use(errorHandler);
 
 async function runServer() {
   await connectToDb();

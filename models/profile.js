@@ -52,9 +52,9 @@ profileSchema.pre('save', function encryptPassword(next) {
   next();
 });
 
-// profileSchema.methods.validatePassword = function validatePassword(password) {
-//   return bcrypt.compareSync(password, this.password);
-// };
+profileSchema.methods.validatePassword = function validatePassword(password) {
+  return bcrypt.compareSync(password, this.password);
+};
 
 profileSchema.plugin(
   mongooseHidden({ defaultHidden: { password: true, email: true } })
