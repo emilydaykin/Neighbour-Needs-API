@@ -2,19 +2,25 @@ import Profile from '../models/profile.js';
 
 const createComment = async (req, res, next) => {
   try {
-    const profile = await Profile.findById(req.params.id);
-    if (!profile) {
-      return res.status(404).send({ message: 'Profile not found' });
+    if (!req.currentUser) {
+      res.status(400).json({ message: 'Unauthorised: User must be logged in.' });
+    } else {
+      const profile = await Profile.findById(req.params.id);
+      if (!profile) {
+        return res.status(404).send({ message: 'Profile not found' });
+      } else {
+        const newComment = {
+          ...req.body,
+          createdBy: req.currentUser
+        };
+        console.log('newComment', newComment);
+        profile.comments.push(newComment);
+
+        const savedProfile = await profile.save();
+
+        return res.status(201).json(savedProfile);
+      }
     }
-    const newComment = {
-      ...req.body,
-      createdBy: req.currentProfile,
-    };
-    profile.comments.push(newComment);
-
-    const savedProfile = await profile.save();
-
-    return res.status(201).json(savedProfile);
   } catch (error) {
     next(error);
   }
@@ -81,5 +87,5 @@ const editComment = async (req, res, next) => {
 export default {
   createComment,
   deleteComment,
-  editComment,
+  editComment
 };

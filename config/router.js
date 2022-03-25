@@ -29,12 +29,12 @@ router.route('/posts/:id').put(postsController.editPost).delete(postsController.
 
 // *FOR EACH PROFILE AND CARD
 
-router.route('/profile/:id/comments').post(commentsController.createComment);
+router.route('/profile/:id/comments').post(secureRoute, commentsController.createComment);
 
 router
   .route('/profile/:id/comments/:commentId')
-  .put(commentsController.editComment)
-  .delete(commentsController.deleteComment);
+  .put(secureRoute, commentsController.editComment)
+  .delete(secureRoute, commentsController.deleteComment);
 
 router.route('/register').post(userController.registerProfile);
 
