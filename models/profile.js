@@ -1,19 +1,23 @@
 import mongoose from 'mongoose';
+
 import bcrypt from 'bcrypt';
 import mongooseHidden from 'mongoose-hidden';
 import uniqueValidator from 'mongoose-unique-validator';
 
 import { emailRegex, passwordRegex } from '../lib/stringTesters.js';
 
+
 const commentSchema = new mongoose.Schema(
   {
     text: { type: String, required: true, maxLength: 300 },
     rating: { type: Number, required: true, min: 1, max: 5 },
+
     createdBy: {
       type: mongoose.Schema.ObjectId,
       ref: 'Profile',
       required: true,
     },
+
   },
   { timestamps: true }
 );
@@ -42,6 +46,7 @@ const profileSchema = new mongoose.Schema({
   comments: [commentSchema],
   posts: { type: Array },
   isAdmin: { type: Boolean },
+
 });
 
 profileSchema.pre('save', function encryptPassword(next) {
@@ -60,5 +65,6 @@ profileSchema.plugin(
 );
 
 profileSchema.plugin(uniqueValidator);
+
 
 export default mongoose.model('Profile', profileSchema);
