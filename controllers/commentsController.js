@@ -50,7 +50,7 @@ const deleteComment = async (req, res, next) => {
   }
 };
 
-const updateComment = async (req, res, next) => {
+const editComment = async (req, res, next) => {
   try {
     const { id, commentId } = req.params;
     const profile = await Profile.findById(id);
@@ -81,5 +81,5 @@ const updateComment = async (req, res, next) => {
 export default {
   createComment,
   deleteComment,
-  updateComment,
+  editComment,
 };

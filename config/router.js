@@ -2,7 +2,6 @@ import express from 'express';
 import profileController from '../controllers/profileController.js';
 import postsController from '../controllers/postsController.js';
 import commentsController from '../controllers/commentsController.js';
-
 import userController from '../controllers/userController.js';
 import secureRoute from '../middleware/secureRoute.js';
 
@@ -34,7 +33,7 @@ router.route('/profile/:id/comments').post(commentsController.createComment);
 
 router
   .route('/profile/:id/comments/:commentId')
-  // .put(commentsController.editComment)
+  .put(commentsController.editComment)
   .delete(commentsController.deleteComment);
 
 router.route('/register').post(userController.registerProfile);
