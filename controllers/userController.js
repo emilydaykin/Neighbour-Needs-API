@@ -1,7 +1,7 @@
 import Profile from '../models/profile.js';
 import jwt from 'jsonwebtoken';
 import { secret } from '../config/environment.js';
-async function registerUser(req, res, next) {
+async function registerProfile(req, res, next) {
   try {
     if (req.body.password !== req.body.passwordConfirmation) {
       return res.status(422).json({ message: 'Passwords do not match' });
@@ -26,7 +26,7 @@ async function loginProfile(req, res, next) {
         .json({ message: 'Unauthorized, profile does not exist' });
     }
 
-    const isValidPw = user.validatePassword(req.body.password);
+    const isValidPw = profile.validatePassword(req.body.password);
 
     if (!isValidPw) {
       return res
@@ -51,6 +51,6 @@ async function loginProfile(req, res, next) {
 }
 
 export default {
-  registerUser,
-  loginUser,
+  registerProfile,
+  loginProfile,
 };
