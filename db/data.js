@@ -39,12 +39,12 @@ const profiles = [
     'admin@user.com',
     'Password1!@',
     [],
-    8.5,
+    0,
     'London',
     'North',
     '', // profile image
     '', // service image
-    true, // is a helper or not
+    false, // is a helper or not
     [],
     [],
     true // isAdmin
@@ -132,6 +132,22 @@ const profiles = [
     false
   ),
   createProfile(
+    'Paulina',
+    'Chen',
+    'pc@user.com',
+    'Password1!@',
+    [],
+    0,
+    'London',
+    'North',
+    '', // profile image
+    '', // service image
+    false, // is a helper or not
+    [],
+    [],
+    false
+  ),
+  createProfile(
     'Lessie',
     'Marsh',
     'lm@user.com',
@@ -191,6 +207,22 @@ const profiles = [
     '', // profile image
     '', // service image
     true, // is a helper or not
+    [],
+    [],
+    false
+  ),
+  createProfile(
+    'Aline',
+    'Hoffmann',
+    'ah@user.com',
+    'Password1!@',
+    [],
+    0,
+    'London',
+    'North',
+    '', // profile image
+    '', // service image
+    false, // is a helper or not
     [],
     [],
     false
@@ -260,6 +292,22 @@ const profiles = [
     false
   ),
   createProfile(
+    'Karthik',
+    'Clending',
+    'kc@user.com',
+    'Password1!@',
+    [],
+    0,
+    'London',
+    'North',
+    '', // profile image
+    '', // service image
+    false, // is a helper or not
+    [],
+    [],
+    false
+  ),
+  createProfile(
     'Vincent',
     'Dotson',
     'vd@user.com',
@@ -293,8 +341,8 @@ const profiles = [
   ),
   createProfile(
     'Miranda',
-    'Adams',
-    'am@user.com',
+    'Kalani',
+    'mk@user.com',
     'Password1!@',
     ['painting'],
     9.2,
