@@ -49,7 +49,6 @@ const profiles = [
     [],
     true // isAdmin
   ),
-
   createProfile(
     'Erika',
     'Sanders',
@@ -82,7 +81,6 @@ const profiles = [
     [],
     false
   ),
-
   createProfile(
     'Wilcox',
     'Fields',
@@ -170,6 +168,22 @@ const profiles = [
     'Password1!@',
     ['carpentering'],
     9.3,
+    'London',
+    'North',
+    '', // profile image
+    '', // service image
+    true, // is a helper or not
+    [],
+    [],
+    false
+  ),
+  createProfile(
+    'Aslan',
+    'Roqui',
+    'ar@user.com',
+    'Password1!@',
+    ['shelves fitting'],
+    8.9,
     'London',
     'North',
     '', // profile image
