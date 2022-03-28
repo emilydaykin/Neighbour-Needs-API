@@ -40,7 +40,9 @@ async function checkProfileAndPerformAction(req, res, action) {
     if (!comment) {
       return res.status(404).json({ message: 'Comment not found' });
     } else if (!comment.createdBy.equals(req.currentUser._id)) {
-      return res.status(401).json({ message: 'Unauthorized action' });
+      return res.status(401).json({
+        message: 'Unauthorised action. You must be the creator of this comment to ${action} it.'
+      });
     } else {
       if (action === 'delete') {
         comment.remove();
@@ -50,7 +52,9 @@ async function checkProfileAndPerformAction(req, res, action) {
         return 'action needs to be `update` or `delete`.';
       }
       const savedProfile = await profile.save();
-      return res.status(200).send(savedProfile);
+      return res
+        .status(200)
+        .send({ message: `Comment succesfully ${action}d`, body: savedProfile });
     }
   }
 }
