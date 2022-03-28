@@ -25,7 +25,10 @@ router
   .post(secureRoute, postsController.createPost);
 
 // //*POSTS ID
-router.route('/posts/:id').put(postsController.editPost).delete(postsController.deletePost);
+router
+  .route('/posts/:id')
+  .put(secureRoute, postsController.updatePost)
+  .delete(secureRoute, postsController.deletePost);
 
 // *FOR EACH PROFILE AND CARD
 

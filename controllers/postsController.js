@@ -9,7 +9,7 @@ const createPost = async (req, res, next) => {
       console.log('req.currentUser', req.currentUser);
       const newPost = await Post.create({
         ...req.body,
-        createdBy: req.currentUser // so that we can extract a user's name later
+        createdBy: req.currentUser._id
       });
       // await Profile.updateMany(
       //   { _id: newPost.service },
@@ -40,18 +40,33 @@ const getAllPostsForProfile = async (req, res, next) => {
   }
 };
 
-const editPost = async (req, res, next) => {
-  try {
-    console.log('req.params', req.params);
-    const post = await Post.findById(req.params.id);
-    console.log('post', post);
-    if (post) {
-      const post = await Post.findByIdAndUpdate(req.params.id);
+// helper function used in both deletePost and updatePost
+async function checkProfileAndPerformAction(req, res, action) {
+  const post = await Post.findById(req.params.id);
+  console.log('post', post);
+  if (!post) {
+    return res.status(404).json({ message: 'Post not found' });
+  } else if (!post.createdBy.equals(req.currentUser._id)) {
+    return res.status(404).json({
+      message: `Unauthorised action. You must be the creator of this post to ${action} it.`
+    });
+  } else {
+    if (action === 'delete') {
+      post.remove();
+    } else if (action === 'update') {
       post.set(req.body);
-      return res.status(200).json({ message: 'Successfully updated post', body: post });
     } else {
-      return res.status(404).json({ message: 'Post not found' });
+      return 'action needs to be `update` or `delete`.';
     }
+    const savedPost = await post.save();
+    return res.status(200).json({ message: `Successfully ${action}d post`, body: savedPost });
+  }
+}
+
+const updatePost = async (req, res, next) => {
+  console.log('req.currentUser.id', req.currentUser._id);
+  try {
+    checkProfileAndPerformAction(req, res, 'update');
   } catch (err) {
     next(err);
   }
@@ -59,13 +74,7 @@ const editPost = async (req, res, next) => {
 
 const deletePost = async (req, res, next) => {
   try {
-    const post = await Post.findById(req.params.id);
-    if (post) {
-      await Post.findByIdAndRemove(req.params.id);
-      return res.status(200).json({ message: 'Successfully deleted post.', body: post });
-    } else {
-      return res.status(404).json({ message: 'Post not found' });
-    }
+    checkProfileAndPerformAction(req, res, 'delete');
   } catch (err) {
     next(err);
   }
@@ -75,6 +84,6 @@ export default {
   createPost,
   getAllPosts,
   getAllPostsForProfile,
-  editPost,
+  updatePost,
   deletePost
 };
