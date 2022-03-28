@@ -3,7 +3,9 @@ import Profile from '../models/profile.js';
 const createComment = async (req, res, next) => {
   try {
     if (!req.currentUser) {
-      res.status(400).json({ message: 'Unauthorised: User must be logged in.' });
+      res
+        .status(400)
+        .json({ message: 'Unauthorised: User must be logged in.' });
     } else {
       const profile = await Profile.findById(req.params.id);
       if (!profile) {
@@ -11,14 +13,16 @@ const createComment = async (req, res, next) => {
       } else {
         const newComment = {
           ...req.body,
-          createdBy: req.currentUser
+          createdBy: req.currentUser,
         };
         console.log('newComment', newComment);
         profile.comments.push(newComment);
 
         const savedProfile = await profile.save();
 
-        return res.status(201).json(savedProfile);
+        return res
+          .status(201)
+          .json({ message: 'Comment successfully created', savedProfile });
       }
     }
   } catch (error) {
@@ -50,7 +54,9 @@ const deleteComment = async (req, res, next) => {
 
     const savedProfile = await profile.save();
 
-    return res.status(200).send(savedProfile);
+    return res
+      .status(200)
+      .send({ message: 'Comment succesfully deleted', savedProfile });
   } catch (error) {
     next(error);
   }
@@ -78,7 +84,9 @@ const editComment = async (req, res, next) => {
     comment.set(req.body);
 
     const savedProfile = await profile.save();
-    return res.status(200).send(savedProfile);
+    return res
+      .status(200)
+      .send({ message: 'Comment succesfully edited', savedProfile });
   } catch (error) {
     next(error);
   }
@@ -87,5 +95,5 @@ const editComment = async (req, res, next) => {
 export default {
   createComment,
   deleteComment,
-  editComment
+  editComment,
 };
