@@ -2,7 +2,8 @@ import Profile from '../models/profile.js';
 import jwt from 'jsonwebtoken';
 import { secret } from '../config/environment.js';
 
-async function registerProfile(req, res, next) {
+// = Register profile
+async function registerUser(req, res, next) {
   try {
     if (req.body.password !== req.body.passwordConfirmation) {
       return res.status(422).json({ message: 'Passwords do not match' });
@@ -17,7 +18,7 @@ async function registerProfile(req, res, next) {
   }
 }
 
-async function loginProfile(req, res, next) {
+async function loginUser(req, res, next) {
   try {
     const profile = await Profile.findOne({ email: req.body.email });
 
@@ -46,7 +47,24 @@ async function loginProfile(req, res, next) {
   }
 }
 
+// helpers, non-helpers & admin
+async function getAllUsers(req, res, next) {
+  if (req.currentUser.isAdmin) {
+    try {
+      const allUsers = await Profile.find();
+      return res.status(200).json({ status: 'success', body: allUsers });
+    } catch (err) {
+      next(err);
+    }
+  } else {
+    return res.status(401).send({
+      message: 'Unauthorised: you must be an admin to get all users'
+    });
+  }
+}
+
 export default {
-  registerProfile,
-  loginProfile
+  registerUser,
+  loginUser,
+  getAllUsers
 };

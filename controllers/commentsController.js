@@ -3,9 +3,7 @@ import Profile from '../models/profile.js';
 const createComment = async (req, res, next) => {
   try {
     if (!req.currentUser) {
-      res
-        .status(400)
-        .json({ message: 'Unauthorised: User must be logged in.' });
+      res.status(400).json({ message: 'Unauthorised: User must be logged in.' });
     } else {
       const profile = await Profile.findById(req.params.id);
       if (!profile) {
@@ -18,9 +16,7 @@ const createComment = async (req, res, next) => {
         console.log('newComment', newComment);
         profile.comments.push(newComment);
         const savedProfile = await profile.save();
-        return res
-          .status(201)
-          .json({ message: 'Comment successfully created', savedProfile });
+        return res.status(201).json({ message: 'Comment successfully created', savedProfile });
       }
     }
   } catch (error) {
@@ -67,7 +63,7 @@ const deleteComment = async (req, res, next) => {
   }
 };
 
-const editComment = async (req, res, next) => {
+const updateComment = async (req, res, next) => {
   try {
     checkProfileAndPerformAction(req, res, 'update');
   } catch (error) {
@@ -78,5 +74,5 @@ const editComment = async (req, res, next) => {
 export default {
   createComment,
   deleteComment,
-  editComment,
+  updateComment
 };
