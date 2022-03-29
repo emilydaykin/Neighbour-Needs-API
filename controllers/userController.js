@@ -27,7 +27,7 @@ async function loginUser(req, res, next) {
     } else {
       const isValidPw = profile.validatePassword(req.body.password);
       if (!isValidPw) {
-        return res.status(404).json({ message: 'Unauthorized. Passwords do not match' });
+        return res.status(404).json({ message: 'Unauthorized. Wrong password' });
       } else {
         const token = jwt.sign(
           {
