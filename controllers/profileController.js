@@ -10,32 +10,44 @@ const getAllProfiles = async (req, res, next) => {
   }
 };
 
-// GET (by id, name, services, city, or region)
+// GET (by id)
+const getProfileById = async (req, res, next) => {
+  // returns a single OBJECT
+  try {
+    // const profileById = await Profile.find({ isHelper: true, _id: req.params.id });
+    const profileById = await Profile.findById(req.params.id);
+
+    if (!profileById || profileById.length === 0) {
+      return res.status(400).json({ message: 'Profile not found (invalid ID)' });
+    } else {
+      return res.status(200).json({ status: 'success', body: profileById });
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+// GET (by name, services, city, or region)
 const searchProfile = async (req, res, next) => {
+  // returns AN ARRAY (of objects)
   try {
     console.log('req.params', req.params);
     const allProfiles = await Profile.find({ isHelper: true });
-    console.log('allProfiles', allProfiles);
-    const profileById = allProfiles.find((profile) => profile.id === req.params.searchTerm);
 
-    if (profileById) {
-      return res.status(200).json({ status: 'success', body: profileById });
+    const searchTermLowerCase = req.params.searchTerm.toLowerCase();
+    const profileByNameOrServiceOrArea = allProfiles.filter(
+      (profile) =>
+        profile.firstName.toLowerCase().includes(searchTermLowerCase) ||
+        profile.surname.toLowerCase().includes(searchTermLowerCase) ||
+        profile.services.find((service) => service.toLowerCase().includes(searchTermLowerCase)) ||
+        profile.city.toLowerCase().includes(searchTermLowerCase) ||
+        profile.region.toLowerCase().includes(searchTermLowerCase)
+    );
+
+    if (profileByNameOrServiceOrArea.length !== 0) {
+      res.status(200).json({ status: 'success', body: profileByNameOrServiceOrArea });
     } else {
-      const searchTermLowerCase = req.params.searchTerm.toLowerCase();
-      const profileByNameOrServiceOrArea = allProfiles.filter(
-        (profile) =>
-          profile.firstName.toLowerCase().includes(searchTermLowerCase) ||
-          profile.surname.toLowerCase().includes(searchTermLowerCase) ||
-          profile.services.find((service) => service.toLowerCase().includes(searchTermLowerCase)) ||
-          profile.city.toLowerCase().includes(searchTermLowerCase) ||
-          profile.region.toLowerCase().includes(searchTermLowerCase)
-      );
-
-      if (profileByNameOrServiceOrArea.length !== 0) {
-        res.status(200).json({ status: 'success', body: profileByNameOrServiceOrArea });
-      } else {
-        res.status(400).json({ message: 'Profile not found' });
-      }
+      res.status(400).json({ message: 'Profile not found' });
     }
   } catch (err) {
     next(err);
@@ -91,4 +103,4 @@ const deleteProfile = async (req, res, next) => {
   }
 };
 
-export default { getAllProfiles, searchProfile, updateProfile, deleteProfile };
+export default { getAllProfiles, getProfileById, searchProfile, updateProfile, deleteProfile };

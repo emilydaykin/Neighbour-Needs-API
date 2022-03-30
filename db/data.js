@@ -166,7 +166,7 @@ const profiles = [
     'Farley',
     'tf@user.com',
     'Password1!@',
-    ['carpentering'],
+    ['carpentry'],
     5,
     'London',
     'North',
