@@ -11,7 +11,9 @@ const createComment = async (req, res, next) => {
       } else {
         const newComment = {
           ...req.body,
-          createdBy: req.currentUser._id
+          createdById: req.currentUser._id,
+          createdByName: req.currentUser.firstName,
+          createdBySurname: req.currentUser.surname
         };
         console.log('newComment', newComment);
         profile.comments.push(newComment);
@@ -35,7 +37,7 @@ async function checkProfileAndPerformAction(req, res, action) {
     const comment = profile.comments.id(commentId);
     if (!comment) {
       return res.status(404).json({ message: 'Comment not found' });
-    } else if (!comment.createdBy.equals(req.currentUser._id)) {
+    } else if (!comment.createdById.equals(req.currentUser._id)) {
       return res.status(401).json({
         message: 'Unauthorised action. You must be the creator of this comment to ${action} it.'
       });
