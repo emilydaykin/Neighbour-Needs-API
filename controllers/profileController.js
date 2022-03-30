@@ -17,7 +17,6 @@ const getProfileById = async (req, res, next) => {
     // const profileById = await Profile.find({ isHelper: true, _id: req.params.id });
     const profileById = await Profile.findById(req.params.id);
 
-    // const profileById = await allProfiles.findById(req.params.id);
     if (!profileById || profileById.length === 0) {
       return res.status(400).json({ message: 'Profile not found (invalid ID)' });
     } else {

@@ -24,11 +24,6 @@ router
   .put(secureRoute, profileController.updateProfile) // same-user only
   .delete(secureRoute, profileController.deleteProfile); // admin only;
 
-// router
-//   .route('/profiles/:id')
-//   .put(secureRoute, profileController.updateProfile) // same-user only
-//   .delete(secureRoute, profileController.deleteProfile); // admin only
-
 //* FOR POSTS
 router
   .route('/posts')
