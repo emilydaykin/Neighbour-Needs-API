@@ -71,7 +71,7 @@ const profiles = [
     'gs@user.com',
     'Password1!@',
     ['baby sitting'],
-    7,
+    3.9,
     'London',
     'North',
     '', // profile image
@@ -87,7 +87,7 @@ const profiles = [
     'wf@user.com',
     'Password1!@',
     ['plumbing'],
-    9,
+    2.5,
     'London',
     'North',
     '', // profile image
@@ -103,7 +103,7 @@ const profiles = [
     'jp@user.com',
     'Password1!@',
     ['web development'],
-    10,
+    5,
     'London',
     'North',
     '', // profile image
@@ -119,7 +119,7 @@ const profiles = [
     'mw@user.com',
     'Password1!@',
     ['therapy'],
-    6.8,
+    1.3,
     'London',
     'North',
     '', // profile image
@@ -151,7 +151,7 @@ const profiles = [
     'lm@user.com',
     'Password1!@',
     ['party planning'],
-    7.7,
+    4.7,
     'London',
     'North',
     '', // profile image
@@ -167,7 +167,7 @@ const profiles = [
     'tf@user.com',
     'Password1!@',
     ['carpentering'],
-    9.3,
+    5,
     'London',
     'North',
     '', // profile image
@@ -183,7 +183,7 @@ const profiles = [
     'ar@user.com',
     'Password1!@',
     ['shelves fitting'],
-    8.9,
+    2,
     'London',
     'North',
     '', // profile image
@@ -199,7 +199,7 @@ const profiles = [
     'br@user.com',
     'Password1!@',
     ['dog walking'],
-    9.5,
+    2.7,
     'London',
     'North',
     '', // profile image
@@ -215,7 +215,7 @@ const profiles = [
     'dy@user.com',
     'Password1!@',
     ['massaging'],
-    8.9,
+    1.6,
     'London',
     'North',
     '', // profile image
@@ -247,7 +247,7 @@ const profiles = [
     'bb@user.com',
     'Password1!@',
     ['decorator'],
-    9,
+    4.3,
     'London',
     'North',
     '', // profile image
@@ -263,7 +263,7 @@ const profiles = [
     'fc@user.com',
     'Password1!@',
     ['nannying'],
-    8.7,
+    5,
     'London',
     'North',
     '', // profile image
@@ -279,7 +279,7 @@ const profiles = [
     'tc@user.com',
     'Password1!@',
     ['architecture'],
-    9.5,
+    4.1,
     'London',
     'North',
     '', // profile image
@@ -295,7 +295,7 @@ const profiles = [
     'pp@user.com',
     'Password1!@',
     ['interior design'],
-    8.2,
+    3.5,
     'London',
     'North',
     '', // profile image
@@ -327,7 +327,7 @@ const profiles = [
     'vd@user.com',
     'Password1!@',
     ['cat sitting'],
-    7.3,
+    2.8,
     'London',
     'North',
     '', // profile image
@@ -343,7 +343,7 @@ const profiles = [
     'sm@user.com',
     'Password1!@',
     ['cleaning'],
-    10,
+    3.5,
     'London',
     'North',
     '', // profile image
@@ -359,7 +359,7 @@ const profiles = [
     'mk@user.com',
     'Password1!@',
     ['painting'],
-    9.2,
+    4.6,
     'London',
     'North',
     '', // profile image
@@ -375,7 +375,7 @@ const profiles = [
     'gl@user.com',
     'Password1!@',
     ['maths tutoring'],
-    7.6,
+    3.4,
     'London',
     'North',
     '', // profile image
@@ -391,7 +391,7 @@ const profiles = [
     'it@user.com',
     'Password1!@',
     ['electician'],
-    8.8,
+    4.4,
     'London',
     'North',
     '', // profile image
@@ -407,7 +407,7 @@ const profiles = [
     'db@user.com',
     'Password1!@',
     ['electonics repair'],
-    7.9,
+    3.1,
     'London',
     'North',
     '', // profile image
