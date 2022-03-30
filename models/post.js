@@ -5,10 +5,16 @@ const postSchema = new mongoose.Schema(
     text: { type: String, required: true },
     service: { type: String, required: true },
     urgency: { type: String, required: false },
-    createdBy: {
+    createdById: {
       type: mongoose.Schema.ObjectId,
       ref: 'Profile',
       required: true
+    },
+    createdByName: {
+      type: String
+    },
+    createdBySurname: {
+      type: String
     }
   },
   { timestamps: true }
