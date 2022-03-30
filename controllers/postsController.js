@@ -9,13 +9,16 @@ const createPost = async (req, res, next) => {
       console.log('req.currentUser', req.currentUser);
       const newPost = await Post.create({
         ...req.body,
-        createdBy: req.currentUser._id
+        createdById: req.currentUser._id,
+        createdByName: req.currentUser.firstName,
+        createdBySurname: req.currentUser.surname
       });
       // await Profile.updateMany(
       //   { _id: newPost.service },
       //   { $push: { posts: newPost._id } }
       // );
-      return res.status(201).json(newPost);
+      const savedPost = await newPost.save();
+      return res.status(201).json({ message: 'Post successfully created', savedPost });
     }
   } catch (err) {
     next(err);
@@ -46,7 +49,7 @@ async function checkProfileAndPerformAction(req, res, action) {
   console.log('post', post);
   if (!post) {
     return res.status(404).json({ message: 'Post not found' });
-  } else if (!post.createdBy.equals(req.currentUser._id)) {
+  } else if (!post.createdById.equals(req.currentUser._id)) {
     return res.status(404).json({
       message: `Unauthorised action. You must be the creator of this post to ${action} it.`
     });
