@@ -18,7 +18,7 @@ const getProfileById = async (req, res, next) => {
     const profileById = await Profile.findById(req.params.id);
 
     if (!profileById || profileById.length === 0) {
-      return res.status(400).json({ message: 'Profile not found (invalid ID)' });
+      return res.status(404).json({ message: 'Profile not found (invalid ID)' });
     } else {
       return res.status(200).json({ status: 'success', body: profileById });
     }
@@ -31,10 +31,11 @@ const getProfileById = async (req, res, next) => {
 const searchProfile = async (req, res, next) => {
   // returns AN ARRAY (of objects)
   try {
-    console.log('req.params', req.params);
+    const { searchTerm } = req.params;
+    console.log('searchTerm', searchTerm);
     const allProfiles = await Profile.find({ isHelper: true });
 
-    const searchTermLowerCase = req.params.searchTerm.toLowerCase();
+    const searchTermLowerCase = searchTerm.toLowerCase();
     const profileByNameOrServiceOrArea = allProfiles.filter(
       (profile) =>
         profile.firstName.toLowerCase().includes(searchTermLowerCase) ||
@@ -47,7 +48,11 @@ const searchProfile = async (req, res, next) => {
     if (profileByNameOrServiceOrArea.length !== 0) {
       res.status(200).json({ status: 'success', body: profileByNameOrServiceOrArea });
     } else {
-      res.status(400).json({ message: 'Profile not found' });
+      // So that front-end searching returns an empty list rather than an error
+      res.status(200).json({
+        message: `Profile not found. (Search term: ${searchTerm})`,
+        body: profileByNameOrServiceOrArea
+      });
     }
   } catch (err) {
     next(err);
@@ -63,7 +68,7 @@ const updateProfile = async (req, res, next) => {
     console.log('profile._id', profile._id);
     console.log({ profile });
     if (!profile) {
-      return res.status(400).json({ message: 'Profile not found' });
+      return res.status(404).json({ message: 'Profile not found' });
     } else if (!req.currentUser._id.equals(profile._id)) {
       return res.status(401).json({
         message:
@@ -87,7 +92,7 @@ const deleteProfile = async (req, res, next) => {
       const profile = await Profile.findById(req.params.id);
       console.log('profile', profile);
       if (!profile) {
-        return res.status(400).json({ message: 'Profile not found' });
+        return res.status(404).json({ message: 'Profile not found' });
       } else {
         await Profile.findByIdAndRemove(req.params.id);
         return res.status(200).json({ message: 'Successfully deleted profile', body: profile });
