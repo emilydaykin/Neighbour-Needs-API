@@ -13,11 +13,13 @@ const createPost = (text, service, urgency, createdById, createdByName, createdB
     createdBySurname: createdBySurname
   };
 };
-function createComment(text, rating, createdById) {
+function createComment(text, rating, createdById, createdByName, createdBySurname) {
   return {
     text: text,
     rating: rating,
-    createdById: createdById
+    createdById: createdById,
+    createdByName: createdByName,
+    createdBySurname: createdBySurname
   };
 }
 // const jsonComment = JSON.stringify(createComment);
@@ -57,7 +59,7 @@ async function seed() {
     ),
     createPost(
       'Anyone around here an interior designer or a decorator?',
-      'cleaning, decorating',
+      'interior design, decorating',
       '',
       randomUser3._id,
       randomUser3.firstName,
@@ -66,7 +68,6 @@ async function seed() {
   ];
 
   const randomCommentee1 = profiles[0].comments;
-  // console.log('randomCommentee1', randomCommentee1);
   const randomCommentee2 = profiles[8].comments;
   const randomCommentee3 = profiles[12].comments;
   const randomCommentee4 = profiles[15].comments;
@@ -76,24 +77,36 @@ async function seed() {
       createComment(
         'Absolutely amazing work feel truly honoured to have had you work with me!!!',
         5,
-        randomUser1._id
+        randomUser1._id,
+        randomUser1.firstName,
+        randomUser1.surname
       )
     ),
     randomCommentee2.push(
-      createComment('Good work but turned up a little late', 3, randomUser2._id)
+      createComment(
+        'Good work but turned up a little late',
+        3,
+        randomUser2._id,
+        randomUser2.firstName,
+        randomUser2.surname
+      )
     ),
     randomCommentee3.push(
       createComment(
         'I would give a 1 but they turned up for the job so I thought that would be unfair',
         2,
-        randomUser3._id
+        randomUser3._id,
+        randomUser3.firstName,
+        randomUser3.surname
       )
     ),
     randomCommentee4.push(
       createComment(
         'I would sincerly recommend any services for them, would give 5 but perfection is not attainable for humankind!!!',
         4,
-        randomUser3._id
+        randomUser3._id,
+        randomUser3.firstName,
+        randomUser3.surname
       )
     )
   ];
