@@ -126,7 +126,7 @@ async function seed() {
     randomCommentee2.push(
       createComment(
         'Thank you so much for taking such good care of my kids!',
-        4,
+        5,
         randomUser2._id,
         randomUser2.firstName,
         randomUser2.surname
@@ -189,7 +189,7 @@ async function seed() {
     randomCommentee18.push(
       createComment(
         'My sitter took great care of my cat, above and beyond my expectations',
-        4,
+        5,
         randomUser18._id,
         randomUser18.firstName,
         randomUser18.surname
@@ -198,7 +198,7 @@ async function seed() {
     randomCommentee19.push(
       createComment(
         'Great service! Totally recommend it!',
-        4,
+        5,
         randomUser19._id,
         randomUser19.firstName,
         randomUser19.surname
@@ -216,6 +216,7 @@ async function seed() {
     randomCommentee21.push(
       createComment(
         'I was so happy when my son got his first A* on maths. Thank you so much Guerrero.',
+        5,
         randomUser21._id,
         randomUser21.firstName,
         randomUser21.surname
@@ -224,6 +225,7 @@ async function seed() {
     randomCommentee22.push(
       createComment(
         'Very professional',
+        3,
         randomUser22._id,
         randomUser22.firstName,
         randomUser22.surname
@@ -232,6 +234,7 @@ async function seed() {
     randomCommentee23.push(
       createComment(
         'Thank for fixing my phone so fast',
+        4,
         randomUser23._id,
         randomUser23.firstName,
         randomUser23.surname
