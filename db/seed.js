@@ -49,20 +49,20 @@ async function seed() {
   console.log(`🌱 Seeded ${profiles.length} profiles`);
 
   // Seed Posts (with users from Profiles database)
-  const randomUser1 = await Profile.findOne({ surname: 'Clending' });
-  const randomUser2 = await Profile.findOne({ surname: 'Hoffmann' });
+  const randomUser1 = await Profile.findOne({ surname: 'Blanchard' });
+  const randomUser2 = await Profile.findOne({ surname: 'Terrell' });
   const randomUser3 = await Profile.findOne({ surname: 'Long' });
-  const randomUser4 = await Profile.findOne({ surname: 'Smith' });
-  const randomUser5 = await Profile.findOne({ surname: 'Bedini' });
-  const randomUser8 = await Profile.findOne({ surname: 'Aylala' });
-  const randomUser10 = await Profile.findOne({ surname: 'Watson' });
-  const randomUser15 = await Profile.findOne({ surname: 'Thomas' });
-  const randomUser18 = await Profile.findOne({ surname: 'Harry' });
-  const randomUser19 = await Profile.findOne({ surname: 'Wilson' });
-  const randomUser20 = await Profile.findOne({ surname: 'Ruby' });
-  const randomUser21 = await Profile.findOne({ surname: 'Harrison' });
-  const randomUser22 = await Profile.findOne({ surname: 'Mendez' });
-  const randomUser23 = await Profile.findOne({ surname: 'Herrera' });
+  const randomUser4 = await Profile.findOne({ surname: 'Kalani' });
+  const randomUser5 = await Profile.findOne({ surname: 'Montoya' });
+  const randomUser8 = await Profile.findOne({ surname: 'Dotson' });
+  const randomUser10 = await Profile.findOne({ surname: 'Clending' });
+  const randomUser15 = await Profile.findOne({ surname: 'Peterson' });
+  const randomUser18 = await Profile.findOne({ surname: 'Carney' });
+  const randomUser19 = await Profile.findOne({ surname: 'Colon' });
+  const randomUser20 = await Profile.findOne({ surname: 'Bennett' });
+  const randomUser21 = await Profile.findOne({ surname: 'Hoffmann' });
+  const randomUser22 = await Profile.findOne({ surname: 'Young' });
+  const randomUser23 = await Profile.findOne({ surname: 'Rocha' });
 
   const generatedPosts = [
     createPost(
