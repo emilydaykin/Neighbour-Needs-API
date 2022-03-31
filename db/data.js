@@ -109,7 +109,7 @@ const profiles = [
     'jp@user.com',
     'Password1!@',
     ['web development'],
-    'Hard-working web developer with a flair for creating elegant solutions in the least amount of time. Developed an ecommerce webapp, customer web portal, documentary launch website, and donations webapp for a local charity. Passionate about software architecture and cloud computing. Regular attendee of web developer meetups and hackathons.', // bio
+    'Hard-working web developer with a flair for creating elegant solutions in the least amount of time. Developed an ecommerce webapp, customer web portal, documentary launch website, and donations webapp for a local charity. Passionate about software architecture and cloud computing.', // bio
     5,
     'London',
     'North',
@@ -219,9 +219,7 @@ const profiles = [
     'https://images.unsplash.com/photo-1530700131180-d43d9b8cc41f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwd2Fsa2luZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
-    [
-      ' I was nervous to leave Sam with strangers, but my worries quickly faded. Thank you so much!',
-    ],
+    [],
     false
   ),
   createProfile(
@@ -357,10 +355,7 @@ const profiles = [
     'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0JTIwc2l0dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
-    [
-      'My sitter took great care of my cat, above and beyond my expectations.',
-      'I must admit I was apprehensive about using a cat sitting service rather than a boarding cattery but my cats were much happier in their own home, thanks to your exemplary care.',
-    ],
+    [],
     false
   ),
   createProfile(
@@ -377,10 +372,7 @@ const profiles = [
     'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2xlYW5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
-    [
-      'Great service! Totally recommend it!',
-      'Saundra did an amazing job. Thank you so much!',
-    ],
+    [],
     false
   ),
   createProfile(
@@ -397,10 +389,7 @@ const profiles = [
     'https://images.unsplash.com/photo-1529722155810-17303d209942?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8d2FsbCUyMHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
-    [
-      'Thank you for painting my nursery room. Great job!',
-      'We needed somebody who could really follow through on a relatively complicated painted scheme. Much better than expected.',
-    ],
+    [],
     false
   ),
   createProfile(
@@ -417,10 +406,7 @@ const profiles = [
     'https://images.unsplash.com/photo-1581089778245-3ce67677f718?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1hdGhzJTIwdHV0b3Jpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
-    [
-      'I was so happy when my son got his first A* on maths. Thank you so much Guerrero.',
-      'Great tutoring',
-    ],
+    [],
     false
   ),
   createProfile(
@@ -437,7 +423,7 @@ const profiles = [
     'https://images.unsplash.com/photo-1627195706291-ec166a2c2582?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWxldHJpY2l0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
-    ['Very professional.'],
+    [],
     false
   ),
   createProfile(
@@ -454,7 +440,7 @@ const profiles = [
     'https://images.unsplash.com/photo-1597424216910-9e56f8a09b8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGhvbmVzJTIwcmVwYWlyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
-    ['Thank for fixing my phone so fast!'],
+    [],
     false
   ),
 ];
