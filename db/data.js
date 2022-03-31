@@ -30,7 +30,7 @@ const createProfile = (
     isHelper: isHelper,
     posts: posts,
     comments: comments,
-    isAdmin: isAdmin,
+    isAdmin: isAdmin
   };
 };
 
@@ -58,7 +58,7 @@ const profiles = [
     'es@user.com',
     'Password1!@',
     ['wedding planning'],
-    'I am a wedding planner ready to make your dream wedding become true! ', // bio
+    'I am a wedding planner ready to make your dream wedding come true! ', // bio
     4.1,
     'London',
     'North',
@@ -92,7 +92,7 @@ const profiles = [
     'wf@user.com',
     'Password1!@',
     ['plumbing'],
-    'Even if its odd time –leakage doesn’t listen to anyone – we are ready to take responsibility of that leakage. #plumbers.', // bio
+    "Even if it's an odd time – leakage doesn’t listen to anyone – we are ready to take responsibility of that leakage. #plumbers.", // bio
     2.5,
     'London',
     'North',
@@ -109,7 +109,7 @@ const profiles = [
     'jp@user.com',
     'Password1!@',
     ['web development'],
-    'Hard-working web developer with a flair for creating elegant solutions in the least amount of time. Developed an ecommerce webapp, customer web portal, documentary launch website, and donations webapp for a local charity. Passionate about software architecture and cloud computing.', // bio
+    'Hard-working web developer with a flair for creating elegant solutions in the least amount of time. Developed an e-commerce web app, customer web portal, documentary launch website, and donations web app for a local charity. Passionate about software architecture and cloud computing.', // bio
     5,
     'London',
     'North',
@@ -160,7 +160,7 @@ const profiles = [
     'lm@user.com',
     'Password1!@',
     ['party planning'],
-    'Planning an unforgettable event is an art form. We are bringing you the prettiest of details so you can focus on the bigger picture.', // bio
+    'Planning an unforgettable event is a form of art. We are bringing you the prettiest of details so you can focus on the bigger picture.', // bio
     4.7,
     'London',
     'North',
@@ -194,7 +194,7 @@ const profiles = [
     'ar@user.com',
     'Password1!@',
     ['shelves fitting'],
-    'I can fix your shelves for you and you dont have to worry about it!', // bio
+    "I can fix your shelves for you so that you don't have to worry about it!", // bio
     2,
     'London',
     'North',
@@ -211,7 +211,7 @@ const profiles = [
     'br@user.com',
     'Password1!@',
     ['dog walking'],
-    'I grew up on a farm so I have alwats been around animals and love them. I provide dog walking. I am available to overnight care.', // bio
+    'I grew up on a farm so I have always been around animals and love them. I provide dog walking services. I am also available for overnight care.', // bio
     2.7,
     'London',
     'North',
@@ -228,7 +228,7 @@ const profiles = [
     'dy@user.com',
     'Password1!@',
     ['massaging'],
-    'Before I became a professional massage therapist, I would spontaneously start rubbing friends shoulders and upper backs when they mentioned tension or discomfort. I just enjoyed helping them feel better. After years of hearing being complemented on how good I was, I decided to make it official', // bio
+    "Before I became a professional massage therapist, I would spontaneously start rubbing friends' shoulders and upper backs when they mentioned any tension or discomfort. I just enjoyed helping them feel better. After years of being complemented on how good I was, I decided to make it official", // bio
     1.6,
     'London',
     'North',
@@ -262,7 +262,7 @@ const profiles = [
     'bb@user.com',
     'Password1!@',
     ['decorator'],
-    'Cant wait to help you decorate your home!', // bio
+    "Can't wait to help you decorate your home!", // bio
     4.3,
     'London',
     'North',
@@ -347,7 +347,7 @@ const profiles = [
     'vd@user.com',
     'Password1!@',
     ['cat sitting'],
-    'I do cat sitting and I love cats. Anytime you need to go on holidays and are afraid to leave your cate home alone I am here! Vincent to the rescue! ', // bio
+    'I do cat sitting and I love cats. Anytime you need to go on holiday and are afraid to leave your cat home alone I am here! Vincent to the rescue! ', // bio
     2.8,
     'London',
     'North',
@@ -381,7 +381,7 @@ const profiles = [
     'mk@user.com',
     'Password1!@',
     ['painting'],
-    'I have been a painter for 5 years now. I will be happy to help you painting your house!', // bio
+    'I have been a painter for 5 years now. I will be happy to help you paint your house!', // bio
     4.6,
     'London',
     'North',
@@ -432,7 +432,7 @@ const profiles = [
     'db@user.com',
     'Password1!@',
     ['electronics repair'],
-    'I am an electronics repair technician and I offer the following services: Repair and replace components, install and update software, install and set up new appliances and machines', // bio
+    'I am an electronics repair technician and I offer the following services: Repairing and replacing components, installing and updating software, installing and setting up new appliances and machines', // bio
     3.1,
     'London',
     'North',
@@ -442,7 +442,7 @@ const profiles = [
     [],
     [],
     false
-  ),
+  )
 ];
 
 export default profiles;
