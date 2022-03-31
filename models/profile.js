@@ -37,6 +37,7 @@ const profileSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Password required'],
+    minlength: [8, 'Password must be a minimum of 8 characters'],
     validate: (password) => passwordRegex.test(password)
   },
   isHelper: { type: Boolean },
