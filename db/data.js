@@ -160,7 +160,7 @@ const profiles = [
     'lm@user.com',
     'Password1!@',
     ['party planning'],
-    'Planning an unforgettable event is an art form. We’re bringing you the prettiest of details so you can focus on the bigger picture.', // bio
+    'Planning an unforgettable event is an art form. We are bringing you the prettiest of details so you can focus on the bigger picture.', // bio
     4.7,
     'London',
     'North',
@@ -177,7 +177,7 @@ const profiles = [
     'tf@user.com',
     'Password1!@',
     ['carpentry'],
-    '', // bio
+    'I am responsible for working with wood to build and repair structures you might need help with.', // bio
     5,
     'London',
     'North',
@@ -194,7 +194,7 @@ const profiles = [
     'ar@user.com',
     'Password1!@',
     ['shelves fitting'],
-    '', // bio
+    'I can fix your shelves for you and you dont have to worry about it!', // bio
     2,
     'London',
     'North',
@@ -211,7 +211,7 @@ const profiles = [
     'br@user.com',
     'Password1!@',
     ['dog walking'],
-    '', // bio
+    'I grew up on a farm so I have alwats been around animals and love them. I provide dog walking. I am available to overnight care.', // bio
     2.7,
     'London',
     'North',
@@ -228,7 +228,7 @@ const profiles = [
     'dy@user.com',
     'Password1!@',
     ['massaging'],
-    '', // bio
+    'Before I became a professional massage therapist, I would spontaneously start rubbing friends shoulders and upper backs when they mentioned tension or discomfort. I just enjoyed helping them feel better. After years of hearing being complemented on how good I was, I decided to make it official', // bio
     1.6,
     'London',
     'North',
@@ -262,7 +262,7 @@ const profiles = [
     'bb@user.com',
     'Password1!@',
     ['decorator'],
-    '', // bio
+    'Cant wait to help you decorate your home!', // bio
     4.3,
     'London',
     'North',
@@ -279,7 +279,7 @@ const profiles = [
     'fc@user.com',
     'Password1!@',
     ['nannying'],
-    '', // bio
+    'I can take care of your kids whenever you need to work.', // bio
     5,
     'London',
     'North',
@@ -296,7 +296,7 @@ const profiles = [
     'tc@user.com',
     'Password1!@',
     ['architecture'],
-    '', // bio
+    'I studied architecture at university', // bio
     4.1,
     'London',
     'North',
@@ -313,7 +313,7 @@ const profiles = [
     'pp@user.com',
     'Password1!@',
     ['interior design'],
-    '', // bio
+    'Every home is a unique expression of its homeowners. We ensure your house design is in keeping with your distinct tastes. Everything, from creating furniture to choosing furnishings and lighting, is meant to reflect your sense of design', // bio
     3.5,
     'London',
     'North',
@@ -381,7 +381,7 @@ const profiles = [
     'mk@user.com',
     'Password1!@',
     ['painting'],
-    '', // bio
+    'I have been a painter for 5 years now. I will be happy to help you painting your house!', // bio
     4.6,
     'London',
     'North',
