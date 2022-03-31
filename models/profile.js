@@ -12,15 +12,15 @@ export const commentSchema = new mongoose.Schema(
     rating: { type: Number, required: true, min: 1, max: 5 },
     createdById: {
       type: mongoose.Schema.ObjectId,
-      ref: 'Profile'
+      ref: 'Profile',
       // required: true,
     },
     createdByName: {
-      type: String
+      type: String,
     },
     createdBySurname: {
-      type: String
-    }
+      type: String,
+    },
   },
   { timestamps: true }
 );
@@ -32,23 +32,24 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Email required'],
     unique: true,
-    validate: (email) => emailRegex.test(email)
+    validate: (email) => emailRegex.test(email),
   },
   password: {
     type: String,
-    required: [true, 'Password required']
+    required: [true, 'Password required'],
     // validate: (password) => passwordRegex.test(password)
   },
   isHelper: { type: Boolean },
   averageRating: { type: String },
   services: { type: Array },
+  bio: { type: String },
   city: { type: String, required: [true, 'City required'] },
   region: { type: String, required: [true, 'Region required'] },
   imageProfile: { type: String },
   imageService: { type: String },
   comments: [commentSchema],
   posts: { type: Array },
-  isAdmin: { type: Boolean }
+  isAdmin: { type: Boolean },
 });
 
 profileSchema.pre('save', function encryptPassword(next) {
@@ -62,7 +63,9 @@ profileSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-profileSchema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true } }));
+profileSchema.plugin(
+  mongooseHidden({ defaultHidden: { password: true, email: true } })
+);
 
 // profileSchema.plugin(uniqueValidator);
 

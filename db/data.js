@@ -4,6 +4,7 @@ const createProfile = (
   email,
   password,
   services,
+  bio,
   averageRating,
   city,
   region,
@@ -20,6 +21,7 @@ const createProfile = (
     email: email,
     password: password,
     services: services,
+    bio: bio,
     averageRating: averageRating,
     city: city,
     region: region,
@@ -39,6 +41,7 @@ const profiles = [
     'admin@user.com',
     'Password1!@',
     [],
+    '',
     0,
     'London',
     'North',
@@ -46,7 +49,7 @@ const profiles = [
     '', // service image
     false, // is a helper or not
     [],
-    [],
+    [], //comments
     true // isAdmin
   ),
   createProfile(
@@ -55,6 +58,7 @@ const profiles = [
     'es@user.com',
     'Password1!@',
     ['wedding planning'],
+    'I am a wedding planner ready to make your dream wedding become true! ', // bio
     4.1,
     'London',
     'North',
@@ -71,6 +75,7 @@ const profiles = [
     'gs@user.com',
     'Password1!@',
     ['baby sitting'],
+    'I adore kids and am looking to earn my own money to save up for a summer camp next year. Parents love me because more than just watching the kids, I always plan fun activities and keep the house tidy.', // bio
     3.9,
     'London',
     'North',
@@ -87,6 +92,7 @@ const profiles = [
     'wf@user.com',
     'Password1!@',
     ['plumbing'],
+    'Even if its odd time –leakage doesn’t listen to anyone – we are ready to take responsibility of that leakage. #plumbers.', // bio
     2.5,
     'London',
     'North',
@@ -103,10 +109,11 @@ const profiles = [
     'jp@user.com',
     'Password1!@',
     ['web development'],
+    'Hard-working web developer with a flair for creating elegant solutions in the least amount of time. Developed an ecommerce webapp, customer web portal, documentary launch website, and donations webapp for a local charity. Passionate about software architecture and cloud computing.', // bio
     5,
     'London',
     'North',
-    'https://lh3.googleusercontent.com/zDacpTp885X_epoTQ30F_cucW82dSy7QecSBDx1SO1ZtMHwB1-FRUbfgT9gz79fNJ0XBMn_4Ut0ItYgpuhzYEAuhH1QI_HikRQuWd2OBUuHf9d08ychH7x4w4it90yHcptgT2oQQ-4Mjpk-wnOBUbc8U3VMGPFX0d_mV5xHHAyGu894wudJcO2ER72HVKzy8HZPeKcYBcIirihSq9YqLEEt-jFngYE2dhoboqhwAlBGZOOWdAujYWJ2wi_jbBvjGWTB_8qLG5Fqw-GXm_ApIXhB7OivD_qvFWGKQprvIl3VYi-N4JiwrxiYQb3Qy5ERn3aaelBj1Df06njbcW66dNqQImxwfEJLE5SLkoh5-fEDeMPYEnXzdVzUHYecz8b0YZ3n4eQaGXA_HwLGYnYkMkiuHvRmVct1sXbOqo5JwtBwCxaeLjeVtPuxiqTW46WZtVCv3uwEMtYw8tRx_6vAVZzy37XPvGcu1DeqTfNMr2bFiunCmN-dBHEOfgqbD110zOciNV8Szw9UQKpA-rtqN_XvsFs-_tFmVFMLBfRSCCl3Faak6EmZNhkMAAA34DpTJhTspqLXLGZeB9YrSK8IHq7hcIqwI2iHcLABwi3DxIZLtKmH_2Wg70edJ-VZEPWhZ9gwsUQmAMWFojMkjJn8wg0RQ3fSOlPNaJJaXZfbCdZbg9HbjMj2GfyVJOs4KOP_C1wKpD1pGdhapoRrTiaIMN_6eri40OAdgBRbm_yCu-hByCNijhqQZzumg7zA=w1300-h866-no?authuser=0', // profile image
+    'https://ca.slack-edge.com/T0351JZQ0-U02QAC7RXPV-06e42c612b52-512', // profile image
     'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60', // service image
     true, // is a helper or not
     [],
@@ -119,6 +126,7 @@ const profiles = [
     'mw@user.com',
     'Password1!@',
     ['therapy'],
+    'I am a relationship expert committed to helping anyone learn how to build healthier relationships. I believe in taking a collaborative approach to helping clients reach their goals. I am passionate about helping people making their life better. If you are interested in scheduling a consultation with me, please send an appointment request.', // bio
     1.3,
     'London',
     'North',
@@ -135,6 +143,7 @@ const profiles = [
     'pc@user.com',
     'Password1!@',
     [],
+    '', // bio
     0,
     'London',
     'North',
@@ -151,6 +160,7 @@ const profiles = [
     'lm@user.com',
     'Password1!@',
     ['party planning'],
+    'Planning an unforgettable event is an art form. We’re bringing you the prettiest of details so you can focus on the bigger picture.', // bio
     4.7,
     'London',
     'North',
@@ -167,6 +177,7 @@ const profiles = [
     'tf@user.com',
     'Password1!@',
     ['carpentry'],
+    '', // bio
     5,
     'London',
     'North',
@@ -183,6 +194,7 @@ const profiles = [
     'ar@user.com',
     'Password1!@',
     ['shelves fitting'],
+    '', // bio
     2,
     'London',
     'North',
@@ -199,6 +211,7 @@ const profiles = [
     'br@user.com',
     'Password1!@',
     ['dog walking'],
+    '', // bio
     2.7,
     'London',
     'North',
@@ -215,6 +228,7 @@ const profiles = [
     'dy@user.com',
     'Password1!@',
     ['massaging'],
+    '', // bio
     1.6,
     'London',
     'North',
@@ -231,6 +245,7 @@ const profiles = [
     'ah@user.com',
     'Password1!@',
     [],
+    '', // bio
     0,
     'London',
     'North',
@@ -247,6 +262,7 @@ const profiles = [
     'bb@user.com',
     'Password1!@',
     ['decorator'],
+    '', // bio
     4.3,
     'London',
     'North',
@@ -263,6 +279,7 @@ const profiles = [
     'fc@user.com',
     'Password1!@',
     ['nannying'],
+    '', // bio
     5,
     'London',
     'North',
@@ -279,6 +296,7 @@ const profiles = [
     'tc@user.com',
     'Password1!@',
     ['architecture'],
+    '', // bio
     4.1,
     'London',
     'North',
@@ -295,6 +313,7 @@ const profiles = [
     'pp@user.com',
     'Password1!@',
     ['interior design'],
+    '', // bio
     3.5,
     'London',
     'North',
@@ -311,6 +330,7 @@ const profiles = [
     'kc@user.com',
     'Password1!@',
     [],
+    '', // bio
     0,
     'London',
     'North',
@@ -327,6 +347,7 @@ const profiles = [
     'vd@user.com',
     'Password1!@',
     ['cat sitting'],
+    'I do cat sitting and I love cats. Anytime you need to go on holidays and are afraid to leave your cate home alone I am here! Vincent to the rescue! ', // bio
     2.8,
     'London',
     'North',
@@ -343,10 +364,11 @@ const profiles = [
     'sm@user.com',
     'Password1!@',
     ['cleaning'],
+    'Too busy to clean? I am here to help you!', // bio
     3.5,
     'London',
     'North',
-    'https://lh3.googleusercontent.com/zbSd_q5FLckPdssYbaYlgr1ZSL6km83ay0aJ5tjYODRdCiKAMGF7hwcd4fhl4775qvcqUE41m_CA82Hkvyvf_O5KkljyJyAvQP23KRuhUke88usbK8_H0dP1rF_2EivfLFEih8kiNsS0oHpkqzm85xWTtloBNo6T3-KRdDup-2pwJfm1sJyNS56JYhCA69Si87rC7a92tXHTCGrYhWIrw8n9q0TeIEGQtrxGHrwQLlyG43trlcqRrhK-Xwb0zvRNlzT8J6q2er77_uVUA-YKAYFs0cpkeyN3Y69coB5YDHmWu0n6-DE3caRj57uxeO3fX_AyuNCc5QZZ_J8MbexiZaa__wRDVe88QD3x1yEU7SlCV47zV1Bfh6UqJmuT_zrrPV3kNGp5cI7qc9Hx3OM-tU9dfBQCx4v5CSI0qKP44rR8g5EO7sh-TNHOj4rSUiMGZrKfdPp9OB5I300dXa4gByuROKgiz_i6DkKhS7dBv_QAmCMhxmJeW9ft6aJMPQHHO78tD2G2Az9HMwM8nu_ZQ6DR0IH-tM3Cyfa41hW6lCT190iweADHRPY7F3907BkpVidEbXdzQoFV_k0KTh_rpkWVrLm_0GfIJhzmxg4Mo9UnlfThWb3dZSGQ1Rz6JtcfMlJE0TKyPFwSNv9eQancGGPegxg_zx7n7QTtCN3M2CTXd-Xw1odgL3ESYyFhpgDN-0jw6kcHS7HWadkr06S9odNYf1dFFTOhWD3M4MwKvb9aBiJhGhWvXla47Kk=w1300-h866-no?authuser=0', // profile image
+    'https://ca.slack-edge.com/T0351JZQ0-U02QAC7RXPV-03b46fe1a57f-512', // profile image
     'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2xlYW5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
@@ -359,6 +381,7 @@ const profiles = [
     'mk@user.com',
     'Password1!@',
     ['painting'],
+    '', // bio
     4.6,
     'London',
     'North',
@@ -375,6 +398,7 @@ const profiles = [
     'gl@user.com',
     'Password1!@',
     ['maths tutoring'],
+    'With my math tutoring, your son or daughter will get the exact attention she needs. The tutoring is personalized to their exact needs !', // bio
     3.4,
     'London',
     'North',
@@ -390,7 +414,8 @@ const profiles = [
     'Terrell',
     'it@user.com',
     'Password1!@',
-    ['electric maintenance'],
+    ['electrical maintenance'],
+    'Specialised in the complete installation of electrical services to residential and commercial buildings. ', // bio
     4.4,
     'London',
     'North',
@@ -407,6 +432,7 @@ const profiles = [
     'db@user.com',
     'Password1!@',
     ['electronics repair'],
+    'I am an electronics repair technician and I offer the following services: Repair and replace components, install and update software, install and set up new appliances and machines', // bio
     3.1,
     'London',
     'North',
