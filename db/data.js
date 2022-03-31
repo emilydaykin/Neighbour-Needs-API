@@ -318,7 +318,7 @@ const profiles = [
     4.1,
     'London',
     'North',
-    'https://files.slack.com/files-pri/T0351JZQ0-F039JSPFQH2/img_4097.png', // profile image
+    'https://media-exp1.licdn.com/dms/image/C4E03AQFvRuDqaNMLLQ/profile-displayphoto-shrink_400_400/0/1647541273789?e=1654128000&v=beta&t=9JSFarOS45p99ScaMWMmUvL5UkaNkpi9lMRMoCdjqBg', // profile image
     'https://images.unsplash.com/photo-1557996133-ee6d20a488fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJjaGl0ZXR1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
