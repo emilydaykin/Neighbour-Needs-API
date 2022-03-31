@@ -3,23 +3,36 @@ import Profile from '../models/profile.js';
 import Post from '../models/post.js';
 import data from './data.js';
 
-const createPost = (text, service, urgency, createdById, createdByName, createdBySurname) => {
+const createPost = (
+  text,
+  service,
+  urgency,
+  createdById,
+  createdByName,
+  createdBySurname
+) => {
   return {
     text: text,
     service: service,
     urgency: urgency,
     createdById: createdById,
     createdByName: createdByName,
-    createdBySurname: createdBySurname
+    createdBySurname: createdBySurname,
   };
 };
-function createComment(text, rating, createdById, createdByName, createdBySurname) {
+function createComment(
+  text,
+  rating,
+  createdById,
+  createdByName,
+  createdBySurname
+) {
   return {
     text: text,
     rating: rating,
     createdById: createdById,
     createdByName: createdByName,
-    createdBySurname: createdBySurname
+    createdBySurname: createdBySurname,
   };
 }
 // const jsonComment = JSON.stringify(createComment);
@@ -39,6 +52,17 @@ async function seed() {
   const randomUser1 = await Profile.findOne({ surname: 'Clending' });
   const randomUser2 = await Profile.findOne({ surname: 'Hoffmann' });
   const randomUser3 = await Profile.findOne({ surname: 'Long' });
+  const randomUser4 = await Profile.findOne({ surname: 'Smith' });
+  const randomUser5 = await Profile.findOne({ surname: 'Bedini' });
+  const randomUser8 = await Profile.findOne({ surname: 'Aylala' });
+  const randomUser10 = await Profile.findOne({ surname: 'Watson' });
+  const randomUser15 = await Profile.findOne({ surname: 'Thomas' });
+  const randomUser18 = await Profile.findOne({ surname: 'Harry' });
+  const randomUser19 = await Profile.findOne({ surname: 'Wilson' });
+  const randomUser20 = await Profile.findOne({ surname: 'Ruby' });
+  const randomUser21 = await Profile.findOne({ surname: 'Harrison' });
+  const randomUser22 = await Profile.findOne({ surname: 'Mendez' });
+  const randomUser23 = await Profile.findOne({ surname: 'Herrera' });
 
   const generatedPosts = [
     createPost(
@@ -64,16 +88,33 @@ async function seed() {
       randomUser3._id,
       randomUser3.firstName,
       randomUser3.surname
-    )
+    ),
   ];
 
-  const randomCommentee1 = profiles[0].comments;
-  const randomCommentee2 = profiles[8].comments;
-  const randomCommentee3 = profiles[12].comments;
-  const randomCommentee4 = profiles[15].comments;
+  const randomCommentee0 = profiles[0].comments;
+  // const randomCommentee1 = profiles[1].comments;
+  const randomCommentee2 = profiles[2].comments;
+  const randomCommentee3 = profiles[3].comments;
+  const randomCommentee4 = profiles[4].comments;
+  const randomCommentee5 = profiles[5].comments;
+  // const randomCommentee7 = profiles[7].comments;
+  const randomCommentee8 = profiles[8].comments;
+  // const randomCommentee9 = profiles[9].comments;
+  const randomCommentee10 = profiles[10].comments;
+  // const randomCommentee11 = profiles[11].comments;
+  // const randomCommentee13 = profiles[13].comments;
+  // const randomCommentee14 = profiles[14].comments;
+  const randomCommentee15 = profiles[15].comments;
+  // const randomCommentee16 = profiles[16].comments;
+  const randomCommentee18 = profiles[18].comments;
+  const randomCommentee19 = profiles[19].comments;
+  const randomCommentee20 = profiles[20].comments;
+  const randomCommentee21 = profiles[21].comments;
+  const randomCommentee22 = profiles[22].comments;
+  const randomCommentee23 = profiles[23].comments;
 
   const generatedComments = [
-    randomCommentee1.push(
+    randomCommentee0.push(
       createComment(
         'Absolutely amazing work feel truly honoured to have had you work with me!!!',
         5,
@@ -84,8 +125,8 @@ async function seed() {
     ),
     randomCommentee2.push(
       createComment(
-        'Good work but turned up a little late',
-        3,
+        'Thank you so much for taking such good care of my kids!',
+        4,
         randomUser2._id,
         randomUser2.firstName,
         randomUser2.surname
@@ -93,8 +134,8 @@ async function seed() {
     ),
     randomCommentee3.push(
       createComment(
-        'I would give a 1 but they turned up for the job so I thought that would be unfair',
-        2,
+        'Thanks for fixing my bathtub!',
+        4,
         randomUser3._id,
         randomUser3.firstName,
         randomUser3.surname
@@ -102,18 +143,115 @@ async function seed() {
     ),
     randomCommentee4.push(
       createComment(
-        'I would sincerly recommend any services for them, would give 5 but perfection is not attainable for humankind!!!',
+        'Thank you so much for my website! Love it!',
         4,
-        randomUser3._id,
-        randomUser3.firstName,
-        randomUser3.surname
+        randomUser4._id,
+        randomUser4.firstName,
+        randomUser4.surname
       )
-    )
+    ),
+    randomCommentee5.push(
+      createComment(
+        'I would give a 1 but they turned up for the job so I thought that would be unfair',
+        2,
+        randomUser5._id,
+        randomUser5.firstName,
+        randomUser5.surname
+      )
+    ),
+    randomCommentee8.push(
+      createComment(
+        'Good work but turned up a little late',
+        3,
+        randomUser8._id,
+        randomUser8.firstName,
+        randomUser8.surname
+      )
+    ),
+    randomCommentee10.push(
+      createComment(
+        'I was nervous to leave Sam with strangers, but my worries quickly faded. Thank you so much!',
+        4,
+        randomUser10._id,
+        randomUser10.firstName,
+        randomUser10.surname
+      )
+    ),
+    randomCommentee15.push(
+      createComment(
+        'I would sincerely recommend any services for them, would give 5 but perfection is not attainable for humankind!!!',
+        4,
+        randomUser15._id,
+        randomUser15.firstName,
+        randomUser15.surname
+      )
+    ),
+    randomCommentee18.push(
+      createComment(
+        'My sitter took great care of my cat, above and beyond my expectations',
+        4,
+        randomUser18._id,
+        randomUser18.firstName,
+        randomUser18.surname
+      )
+    ),
+    randomCommentee19.push(
+      createComment(
+        'Great service! Totally recommend it!',
+        4,
+        randomUser19._id,
+        randomUser19.firstName,
+        randomUser19.surname
+      )
+    ),
+    randomCommentee20.push(
+      createComment(
+        'We needed somebody who could really follow through on a relatively complicated painted scheme. Much better than expected.',
+        4,
+        randomUser20._id,
+        randomUser20.firstName,
+        randomUser20.surname
+      )
+    ),
+    randomCommentee21.push(
+      createComment(
+        'I was so happy when my son got his first A* on maths. Thank you so much Guerrero.',
+        randomUser21._id,
+        randomUser21.firstName,
+        randomUser21.surname
+      )
+    ),
+    randomCommentee22.push(
+      createComment(
+        'Very professional',
+        randomUser22._id,
+        randomUser22.firstName,
+        randomUser22.surname
+      )
+    ),
+    randomCommentee23.push(
+      createComment(
+        'Thank for fixing my phone so fast',
+        randomUser23._id,
+        randomUser23.firstName,
+        randomUser23.surname
+      )
+    ),
   ];
   await profiles[0].save();
+  await profiles[2].save();
+  await profiles[3].save();
+  await profiles[4].save();
+  await profiles[5].save();
   await profiles[8].save();
-  await profiles[12].save();
+  await profiles[10].save();
   await profiles[15].save();
+  await profiles[18].save();
+  await profiles[19].save();
+  await profiles[20].save();
+  await profiles[21].save();
+  await profiles[22].save();
+  await profiles[23].save();
 
   // console.log('profile 0:', profiles[0]);
   const posts = await Post.create(generatedPosts);
