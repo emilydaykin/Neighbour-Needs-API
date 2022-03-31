@@ -164,7 +164,7 @@ const profiles = [
     4.7,
     'London',
     'North',
-    'https://lh3.googleusercontent.com/PNZiX2OzRsopO37L_uZ2MZ3gtdG7wX9FqUf6E_OLRQeDsWnWDlFD_jxzjtXqULmt3ePo9RBzLctx54_NPCqGB3GBjQADNiUfg0h5DfSlehb_JGgcToqZdx6tZDbNVtRrc7YKodIEuPTly7aKveOX8dWCH-3ZrdW0yl29-01MHfvvnl4WAPKxFxVIxAFx_IP8Yw6N5c46kZ6L6YpLMJmtDITR7TzRluLcjOKFgzBgBF4JYNNpdQIt9hNyEZmR6OsIsv0qw4ccl00tQSCjoBJ9ad7yl32BYnkiC9Krf4SfCOkZuGRlDvdfnXKS_NVFAWEYcKpOzKHP_qMtrRRmZM6LA09xe0qCXCHOlyJP8NDsj06Avf3s9-svgXT4Hn3c08wFv8GbCF-LlvATEIM5g6vY7f8oszM8lm9x4HXhCoQXVHDiLKdtESWYG2nBVlxe1T3bweQ9tL_CXAVNKU4IQCfPB2KlWX16ltRbREW-Mqu9mnb2ww_a2LNupAa2F8SskIun7LkY-fJbXtQGYOa3IkW-WIpd9oIsEu2Xtwi4HNwYSxSf3ad6zDXK1S2fEzxGPTVSyJVZS8S0IVJhuIOO0n5hHb2nfcTosYP-3wHMEuM633UAV4ddDrVCzSu4BL4PpzgCUu2_t0pY9GdrAmEwzV9P5CzDW5UVU0p4ErJH0uxHSpOd0YV3VbN_FwQb5ezLNk4BiUChEKPM_XS6L5u4x8Oo9d5ZGMhJDn45l1-u74yj_W8vfJSa2UgqDh73iZgL=w1155-h866-no?authuser=0', // profile image
+    'https://ca.slack-edge.com/T0351JZQ0-U02QAC7RXPV-a6758234f7f0-512', // profile image
     'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGFydHklMjBwbGFubmluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
@@ -232,7 +232,7 @@ const profiles = [
     1.6,
     'London',
     'North',
-    'https://lh3.googleusercontent.com/aZde74e-giy6G79JZiOwHQCVqE1-kbBvQbf1qzx6T6OlVedlNdPSb-wJdd5t4XYh5-JwSz-USrAjVhF3qsyG8qB5AcVvccrpk2OSaaq9PqwNN6O6yVMq98a_InDKPGvMpI3DahurKV2k8kc_saNfSbt7ZvDCK3rzkPGAchX15cJTvls_XeDbjHaV_EYPUQfQmAKuUzMZuDE1B68XIy-vmYVbjBN4MjITp3_V0twycSYGBXvCDGWN3H8D1_KeojYDb1AQQ_M9-m1Tuu5WWWksr7fmhMM7Ytq_3cnr0aSVHBtHcLSSgjUgP4OKNXvt3gpssB-njIAGF-jhXevJsjdio9LHuO9ELQWXYWdebjMSRQGaiUJgE-lvk3Ud89oaoOhcsh4jFrICUn1WEKC4KdCRkQSswL-ah5AEK4Lo5iatFHJdYs_hZKokBCD76g-5ladTgxlRYgl0VG1elLlboEQphUT6Q551XAEuo355GNMKfGMFgoUftIWF4IVAgl3zDh0n6M782bIDodlEnIf1ULYmpO9jvrZuBkVB2GNT1Y3fAZXogOGBKHqNKX0XVraINGV9wpkcUTrAy91LQb_Rij1Wvjz9Ywx0Pb_JpXluMqnSYcTb6GJFhTutWJEEQRfGNZ2kF58lDHMVu3V6w8Xt6MSEWwHvnfxVviGaQXEayOYbpgoAl24A5zIznXhYsB_QOzSbRTpaRBZbJRocqWt1UzAWA_Qb62CVdzVkofzBn6pY_be6P3UUiJuYgnPQ3TI=w1155-h866-no?authuser=0', // profile image
+    'https://ca.slack-edge.com/T0351JZQ0-U02QAC7RXPV-a66e1701a3a6-192', // profile image
     'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFzc2V1c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
