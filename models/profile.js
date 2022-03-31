@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 import bcrypt from 'bcrypt';
 import mongooseHidden from 'mongoose-hidden';
-// import uniqueValidator from 'mongoose-unique-validator';
+import uniqueValidator from 'mongoose-unique-validator';
 
 import { emailRegex, passwordRegex } from '../lib/stringTesters.js';
 
@@ -13,14 +13,14 @@ export const commentSchema = new mongoose.Schema(
     createdById: {
       type: mongoose.Schema.ObjectId,
       ref: 'Profile',
-      // required: true,
+      required: true
     },
     createdByName: {
-      type: String,
+      type: String
     },
     createdBySurname: {
-      type: String,
-    },
+      type: String
+    }
   },
   { timestamps: true }
 );
@@ -32,12 +32,12 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Email required'],
     unique: true,
-    validate: (email) => emailRegex.test(email),
+    validate: (email) => emailRegex.test(email)
   },
   password: {
     type: String,
     required: [true, 'Password required'],
-    // validate: (password) => passwordRegex.test(password)
+    validate: (password) => passwordRegex.test(password)
   },
   isHelper: { type: Boolean },
   averageRating: { type: String },
@@ -49,7 +49,7 @@ const profileSchema = new mongoose.Schema({
   imageService: { type: String },
   comments: [commentSchema],
   posts: { type: Array },
-  isAdmin: { type: Boolean },
+  isAdmin: { type: Boolean }
 });
 
 profileSchema.pre('save', function encryptPassword(next) {
@@ -63,10 +63,8 @@ profileSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-profileSchema.plugin(
-  mongooseHidden({ defaultHidden: { password: true, email: true } })
-);
+profileSchema.plugin(mongooseHidden({ defaultHidden: { password: true, email: true } }));
 
-// profileSchema.plugin(uniqueValidator);
+profileSchema.plugin(uniqueValidator);
 
 export default mongoose.model('Profile', profileSchema);
