@@ -137,6 +137,24 @@ const profiles = [
     [],
     false
   ),
+
+  createProfile(
+    'Maurizio',
+    'Logan',
+    'ml@user.com',
+    'Password1!@',
+    ['therapy'],
+    "I am a stress management expert with a decade of experience coaching, guiding and helping people become their best selves. My clients have achieved life-changing results and can testify. Please don't hesitate to reach out to find out more.", // bio
+    4.2,
+    'London',
+    'North',
+    'https://ca.slack-edge.com/T0351JZQ0-U01L9S4FTLZ-63e00dae7cdd-512', // profile image
+    'https://images.unsplash.com/photo-1573497491208-6b1acb260507?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dGhlcmFweXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60', // service image
+    true, // is a helper or not
+    [],
+    [],
+    false
+  ),
   createProfile(
     'Paulina',
     'Chen',
@@ -228,7 +246,7 @@ const profiles = [
     'dy@user.com',
     'Password1!@',
     ['massaging'],
-    "Before I became a professional massage therapist, I would spontaneously start rubbing friends' shoulders and upper backs when they mentioned any tension or discomfort. I just enjoyed helping them feel better. After years of being complemented on how good I was, I decided to make it official", // bio
+    "Before I became a professional massage therapist, I would spontaneously start rubbing friends' shoulders and upper backs when they mentioned any tension or discomfort. I just enjoyed helping them feel better. After years of being complimented on how good I was, I decided to make it official", // bio
     1.6,
     'London',
     'North',
@@ -300,7 +318,7 @@ const profiles = [
     4.1,
     'London',
     'North',
-    'https://files.slack.com/files-pri/T0351JZQ0-F039JSPFQH2/img_4097.png', // profile image
+    'https://media-exp1.licdn.com/dms/image/C4E03AQFvRuDqaNMLLQ/profile-displayphoto-shrink_400_400/0/1647541273789?e=1654128000&v=beta&t=9JSFarOS45p99ScaMWMmUvL5UkaNkpi9lMRMoCdjqBg', // profile image
     'https://images.unsplash.com/photo-1557996133-ee6d20a488fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJjaGl0ZXR1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', // service image
     true, // is a helper or not
     [],
