@@ -32,7 +32,6 @@ const searchProfile = async (req, res, next) => {
   // returns AN ARRAY (of objects)
   try {
     const { searchTerm } = req.params;
-    console.log('searchTerm', searchTerm);
     const allProfiles = await Profile.find({ isHelper: true });
 
     const searchTermLowerCase = searchTerm.toLowerCase();
@@ -63,7 +62,7 @@ const searchProfile = async (req, res, next) => {
 // This will update ANY profile (user, helper, admin etc)
 const updateProfile = async (req, res, next) => {
   try {
-    console.log('req.currentUser._id', req.currentUser._id);
+    // console.log('req.currentUser._id', req.currentUser._id);
     const profile = await Profile.findById(req.params.id);
     console.log('profile._id', profile._id);
     console.log({ profile });
@@ -88,7 +87,7 @@ const updateProfile = async (req, res, next) => {
 const deleteProfile = async (req, res, next) => {
   if (req.currentUser.isAdmin) {
     try {
-      console.log('req.params', req.params);
+      // console.log('req.params', req.params);
       const profile = await Profile.findById(req.params.id);
       console.log('profile', profile);
       if (!profile) {

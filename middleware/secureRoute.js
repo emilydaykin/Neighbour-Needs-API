@@ -16,7 +16,7 @@ const secureRoute = async (req, res, next) => {
         if (err) {
           return res.status(400).json({ message: "Unauthorised. JWT can't verify." });
         } else {
-          console.log('data', data);
+          // console.log('data', data);
           const user = await Profile.findById(data.profileId);
           if (!user) {
             return res.status(401).json({ message: 'Unauthorised. User not in database' });
