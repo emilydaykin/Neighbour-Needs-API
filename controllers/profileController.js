@@ -32,7 +32,6 @@ const searchProfile = async (req, res, next) => {
   // returns AN ARRAY (of objects)
   try {
     const { searchTerm } = req.params;
-    console.log('searchTerm', searchTerm);
     const allProfiles = await Profile.find({ isHelper: true });
 
     const searchTermLowerCase = searchTerm.toLowerCase();
