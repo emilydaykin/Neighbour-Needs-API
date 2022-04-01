@@ -3,36 +3,23 @@ import Profile from '../models/profile.js';
 import Post from '../models/post.js';
 import data from './data.js';
 
-const createPost = (
-  text,
-  service,
-  urgency,
-  createdById,
-  createdByName,
-  createdBySurname
-) => {
+const createPost = (text, service, urgency, createdById, createdByName, createdBySurname) => {
   return {
     text: text,
     service: service,
     urgency: urgency,
     createdById: createdById,
     createdByName: createdByName,
-    createdBySurname: createdBySurname,
+    createdBySurname: createdBySurname
   };
 };
-function createComment(
-  text,
-  rating,
-  createdById,
-  createdByName,
-  createdBySurname
-) {
+function createComment(text, rating, createdById, createdByName, createdBySurname) {
   return {
     text: text,
     rating: rating,
     createdById: createdById,
     createdByName: createdByName,
-    createdBySurname: createdBySurname,
+    createdBySurname: createdBySurname
   };
 }
 // const jsonComment = JSON.stringify(createComment);
@@ -66,12 +53,12 @@ async function seed() {
 
   const generatedPosts = [
     createPost(
-      "Hello there everyone! Can anyone help me plan my son's 6th birthday party next Saturday please?",
-      'Party planning',
-      'Fairly urgent',
-      randomUser1._id,
-      randomUser1.firstName,
-      randomUser1.surname
+      'Anyone around here an interior designer or a decorator?',
+      'interior design, decorating',
+      '',
+      randomUser3._id,
+      randomUser3.firstName,
+      randomUser3.surname
     ),
     createPost(
       'I need a therapist!',
@@ -82,13 +69,13 @@ async function seed() {
       randomUser2.surname
     ),
     createPost(
-      'Anyone around here an interior designer or a decorator?',
-      'interior design, decorating',
-      '',
-      randomUser3._id,
-      randomUser3.firstName,
-      randomUser3.surname
-    ),
+      "Hello there everyone! Can anyone help me plan my son's 6th birthday party next Saturday please?",
+      'Party planning',
+      'Fairly urgent',
+      randomUser1._id,
+      randomUser1.firstName,
+      randomUser1.surname
+    )
   ];
 
   const randomCommentee0 = profiles[0].comments;
@@ -239,7 +226,7 @@ async function seed() {
         randomUser23.firstName,
         randomUser23.surname
       )
-    ),
+    )
   ];
   await profiles[0].save();
   await profiles[2].save();

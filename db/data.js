@@ -62,7 +62,7 @@ const profiles = [
     4.1,
     'London',
     'North',
-    '../bitmoji.jpeg',
+    '',
     'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80',
     true, // is a helper or not
     [],
