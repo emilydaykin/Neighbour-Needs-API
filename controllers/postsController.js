@@ -6,7 +6,7 @@ const createPost = async (req, res, next) => {
     if (!req.currentUser) {
       res.status(400).json({ message: 'Unauthorised. You must be signed in to create a post.' });
     } else {
-      console.log('req.currentUser', req.currentUser);
+      // console.log('req.currentUser', req.currentUser);
       const newPost = await Post.create({
         ...req.body,
         createdById: req.currentUser._id,
@@ -68,7 +68,7 @@ async function checkProfileAndPerformAction(req, res, action) {
 }
 
 const updatePost = async (req, res, next) => {
-  console.log('req.currentUser.id', req.currentUser._id);
+  // console.log('req.currentUser.id', req.currentUser._id);
   try {
     checkProfileAndPerformAction(req, res, 'update');
   } catch (err) {
