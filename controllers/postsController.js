@@ -55,9 +55,7 @@ async function checkProfileAndPerformAction(req, res, action) {
     });
   } else {
     if (action === 'delete') {
-      console.log('I am in the delete action block');
       await post.remove();
-      console.log('Just removed the post!, returning status');
       return res.status(204).json({ message: 'Successfully deleted post' });
     } else if (action === 'update') {
       post.set(req.body);
